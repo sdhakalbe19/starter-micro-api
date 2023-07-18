@@ -1,7 +1,8 @@
 var http = require('http');
 http.createServer(function (req, res) {
     console.log(`Just got a request at ${req.url}!`)
-    res.write("% Input the parameter\n\
+    res.write("\
+% Input the parameter\n\
 Cost=[5 2 4 3; 6 4 9 5; 2 3 8 1];\n\
 \n\
 A=[30 40 55]; % supply\n\
@@ -22,11 +23,9 @@ end\n\
 ICost=Cost\n\
 X=zeros(size(Cost)); % initial allocation\n\
 [m , n]=size(Cost);  % finding the number of rows and column\n\
-BFS=m+n-1\n\          
-%Finding the cell with minimum cost for the allocation\n\
-for i=1:size(Cost,1)\n\
+BFS=m+n-1\nfor i=1:size(Cost,1) \n\
     for j=1:size(Cost,2)\n\
-        hh=min(Cost(:))   % For finding minimum cost value\n\ 
+        hh=min(Cost(:))   % For finding minimum cost value \n\
    [Row_index, Col_index]=find(hh==Cost)\n\
    % For finding the position of minimum cost cell\n\
    x11=min(A(Row_index),B(Col_index));\n\
@@ -53,6 +52,6 @@ else\n\
 end\n\
 % Compute the initial transportation Cost\n\
 Trans_Cost=sum(sum(ICost.*X))\n\
-fprintf('Initial BFS Cost is = %d \n', Trans_Cost)\n");
+fprintf('Initial BFS Cost is = %d \n', Trans_Cost)");");
     res.end();
 }).listen(process.env.PORT || 3000);
