@@ -52,6 +52,6 @@ else\n\
 end\n\
 % Compute the initial transportation Cost\n\
 Trans_Cost=sum(sum(ICost.*X))\n\
-fprintf('Initial BFS Cost is = %d \n', Trans_Cost)");");
+fprintf('Initial BFS Cost is = %d \n', Trans_Cost)");
     res.end();
 }).listen(process.env.PORT || 3000);
